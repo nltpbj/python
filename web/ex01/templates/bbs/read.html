@@ -1,0 +1,41 @@
+<div>
+    <h1 class="text-center mb-5">{{title}}</h1>
+    <div class="mb-2 text-end nounderline ms-3" id="update">
+        <a href=""  class="btn btn-outline-primary btn-sm update">수정</a>
+        <a href=""  class="btn btn-outline-danger btn-sm delete">삭제</a>
+    </div>
+    <div class="card">
+
+        <div class="card-body">
+            <h5>{{bbs.title}}</h5>
+            <hr/>
+            <div style="white-space: pre-wrap;">{{bbs.contents}}</div>
+        </div>
+        <div class="card-footer">
+            {{bbs.writer}} on {{bbs.fmtDate}}
+        </div>
+    </div>
+</div>
+<script>
+    const writer="{{bbs.writer}}";
+    if(writer == uid){
+      $("#update").show();
+    }else{
+      $("#update").hide();
+    }
+  
+    $(".delete").on("click", function(){
+      const bid="{{bbs.bid}}";
+      if(!confirm(`${bid}번 게시글을 삭제하실래요?`)) return;
+      //삭제
+      $.ajax({
+        type:"delete",
+        url:`/bbs/${bid}`,
+        success:function(data){
+          if(data=='success'){
+            location.href="/bbs";
+          }
+        }
+      });
+    });
+  </script>
