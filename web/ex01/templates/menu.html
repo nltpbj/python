@@ -8,7 +8,7 @@
     </span>
 
     <span style="float:right;">
-        <a href="/users/mypage" style="color: gold;" id="uid" class="me-3">로그아웃</a>
+        <a href="/users/mypage" style="color: gold;" id="uid" class="me-3"></a>
         <a href="/users/logout"  id="logout">로그아웃</a>
     </span>
    
@@ -25,10 +25,10 @@
         $("#logout").hide();
     }
     
-    $("#logout").on("click", "a", function(e){
+    $("#logout").on("click", function(e){
         e.preventDefault();
-        if(!confirm("로그아웃 하실래요?")) return;
+        if(!confirm("로그아웃하실래요?")) return;
         sessionStorage.clear();
-        location.href="/";
+        location.href = "/";
     });
 </script>
