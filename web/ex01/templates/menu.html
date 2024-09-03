@@ -1,0 +1,34 @@
+<div class="nounderline">
+    <a class="me-3" href="/" >홈</a>
+    <a class="me-3" href="/bbs">게시판</a>
+
+
+    <span style="float:right;" class="ms-3" id="login">
+        <a href="/users/login">로그인</a>
+    </span>
+
+    <span style="float:right;">
+        <a href="/users/mypage" style="color: gold;" id="uid" class="me-3"></a>
+        <a href="/users/logout"  id="logout">로그아웃</a>
+    </span>
+   
+    <hr/>
+</div>
+<script>
+    const uid=sessionStorage.getItem("uid")
+    if(uid){
+        $("#uid").html(uid + "님");
+        $("#login").hide();
+        $("#logout").show();
+    }else{
+        $("#login").show();
+        $("#logout").hide();
+    }
+    
+    $("#logout").on("click", function(e){
+        e.preventDefault();
+        if(!confirm("로그아웃하실래요?")) return;
+        sessionStorage.clear();
+        location.href = "/";
+    });
+</script>

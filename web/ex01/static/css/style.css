@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=IBM+Plex+Sans+KR&display=swap');
+
+* {
+    font-family: "Diphylleia", serif;
+
+}
+
+.py-color{
+    color: rgb(0, 0, 0);
+}
+
+.nounderline a {
+    text-decoration: none;
+    color: initial; 
+}
+
+.nounderline a:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.bottom-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-page  img{
+    position: absolute;
+    left: 0;
+    margin-left: 250px;
+    width: 70px; 
+    height: auto;
+}
+
+.gen-color {
+    background-color: black;
+    color: white; 
+}
+
+.gen-color th, .gen-color td {
+    border-color: white; 
+}
+
+.bottom-color {
+    color: gold;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
